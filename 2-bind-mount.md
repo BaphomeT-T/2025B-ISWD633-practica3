@@ -17,21 +17,22 @@ docker run -d --name <nombre contenedor> --mount type=bind,source=<ruta carpeta 
 ### Crear un contenedor con la imagen nginx:alpine, mapear todos por puertos, para la ruta carpeta host colocar el directorio en donde se encuentra la carpeta html en tu computador y para la ruta carpeta contenedor: /usr/share/nginx/html (esta ruta se obtiene al revisar la documentación de la imagen)
 ![Volúmenes](volumen-host.PNG)
 # COMPLETAR CON EL COMANDO
+docker run -d --name nginxWeb -p 8080:80 -v C:\Users\ASUS\Desktop\nginx\html:/usr/share/nginx/html nginx:alpine
 
 ### ¿Qué sucede al ingresar al servidor de nginx?
 # COMPLETAR CON LA RESPUESTA A LA PREGUNTA
-
+Se muestra el error 403 Forbidden ya que no hay un archivo index.html aún.
 ### ¿Qué pasa con el archivo index.html del contenedor?
 # COMPLETAR CON LA RESPUESTA A LA PREGUNTA
-
+EL archivo index.html del contenedor es reemplazado por el bind mount.
 ### Ir a https://html5up.net/ y descargar un template gratuito, descomprirlo dentro de tu computador en la carpeta html
 ### ¿Qué sucede al ingresar al servidor de nginx?
 # COMPLETAR CON LA RESPUESTA A LA PREGUNTA
-
+Al recargar la página se ve el template descargado.
 ### Eliminar el contenedor
 # COMPLETAR CON EL COMANDO
-
+docker rm -f nginxWeb
 ### ¿Qué sucede al crear nuevamente un contenedor montado al directorio definidos anteriormente?
 # COMPLETAR CON LA RESPUESTA A LA PREGUNTA
-
+Al ingresar al servidor se carga el template anterior nuevamente.
 
